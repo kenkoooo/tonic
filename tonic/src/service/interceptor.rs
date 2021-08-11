@@ -80,7 +80,7 @@ where
 /// created by calling [`interceptor`].
 ///
 /// See [`Interceptor`] for more details.
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone)]
 pub struct InterceptorLayer<F> {
     f: F,
 }
@@ -109,7 +109,7 @@ pub type InterceptorFn<F> = InterceptorLayer<F>;
 /// A service wrapped in an interceptor middleware.
 ///
 /// See [`Interceptor`] for more details.
-#[derive(Clone, Copy)]
+#[derive(Clone)]
 pub struct InterceptedService<S, F> {
     inner: S,
     f: F,
